@@ -8,14 +8,30 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @State private var color1: Color = .red
+    @State private var color2: Color = .blue
+    @State private var color3: Color = .yellow
+
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        ZStack {
+            Color
+                .blue
+                .opacity(0.2)
+                .ignoresSafeArea()
+            VStack {
+                HStack {
+                    RectagleView(color: color1)
+                    RectagleView(color: color2)
+                    RectagleView(color: color3)
+                }
+                ColorPicker("Left", selection: $color1)
+                ColorPicker("Middele", selection: $color2)
+                ColorPicker("Right", selection: $color3)
+
+            }
+            .padding()
         }
-        .padding()
     }
 }
 

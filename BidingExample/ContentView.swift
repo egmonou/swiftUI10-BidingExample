@@ -25,9 +25,10 @@ struct ContentView: View {
                     RectagleView(color: color2)
                     RectagleView(color: color3)
                 }
-                ColorPicker("Left", selection: $color1)
-                ColorPicker("Middele", selection: $color2)
-                ColorPicker("Right", selection: $color3)
+                CustomeColorPicker(text: "Left", slectedColor: $color1)
+                CustomeColorPicker(text: "Middele", slectedColor: $color2)
+                CustomeColorPicker(text: "Right", slectedColor: $color3)
+
 
             }
             .padding()
